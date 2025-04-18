@@ -26,14 +26,48 @@
 #
 
 # patch:
-#   "translator/enable_charset_filter": true
-#   # 載入朙月拼音擴充詞庫
-#   "translator/dictionary": luna_pinyin.extended
+#   translator:
+#     enable_charset_filter": true
+#     enable_user_dict": true
+#     enable_sentence": true
+#     # 載入朙月拼音擴充詞庫
+#     dictionary:
+#       - luna_pinyin.moe_idioms
+#       - luna_pinyin.moe_concise
+#       - luna_pinyin.moe_mini
+#       - luna_pinyin.extended
 #   # 改寫拼寫運算，使得含西文的詞彙（位於 luna_pinyin.cn_en.dict.yaml 中）不影響簡拼功能（注意，此功能只適用於朙月拼音系列方案，不適用於各類雙拼方案）
 #   # 本條補靪只在「小狼毫 0.9.30」、「鼠鬚管 0.9.25 」、「Rime-1.2」及更高的版本中起作用。
 #   "speller/algebra/@before 0": xform/^([b-df-np-z])$/$1_/
+#   "engine/filters":
+#     - charset_filter@tw
+#   "charset_filter/tw":
+#     opencc_config: tw2sp.json
+#     tips: "（已限制使用常用正體字）"
+#
+
+patch:
+  # 啟用字集過濾（重要）
+  "translator/enable_charset_filter": true
+
+  # 限定使用台灣正體常用字（需搭配 OpenCC）
+  "engine/filters":
+    - charset_filter@tw
+
+  "charset_filter/tw":
+    opencc_config: tw2sp.json
+    tips: "（已限制使用常用正體字）"
+
+  # 指定使用的詞庫（台灣教育部詞庫 + 擴充）
+  "translator/dictionary_list":
+    - luna_pinyin.moe_idioms      # 成語與典故
+    - luna_pinyin.moe_concise     # 常用詞彙
+    - luna_pinyin.moe_mini        # 精簡詞庫
+    - luna_pinyin.extended        # 其他常用擴充
+
+  # 拼寫優化（避免西文干擾簡拼）
+  "speller/algebra/@before 0": xform/^([b-df-np-z])$/$1_/
 
 translator:
-  enable_user_dict: true
-  enable_sentence: true
-
+  enable_user_dict: true          # 開啟使用者詞典（可學習）
+  enable_sentence: true           # 支援詞句聯想
