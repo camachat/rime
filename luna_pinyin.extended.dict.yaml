@@ -44,12 +44,11 @@ import_tables:
   - luna_pinyin
   - luna_pinyin.moe_idioms      # 成語與典故
   - luna_pinyin.moe_concise     # 常用詞彙
-  - luna_pinyin.moe_mini        # 精簡字庫
-  - luna_pinyin.poetry          # 詩楚經
+  - luna_pinyin.poetry          # 詩、詞、經
   - luna_pinyin.hanyu           # 漢語大詞典
-  - luna_pinyin.moe_revise      # 重編國語辭典修訂本
   - luna_pinyin.zhtwiki         # 中文WiKipedia
-  - luna_pinyin.hanyu           # 漢語大詞典
+  - luna_pinyin.moe_revise      # 重編國語辭典修訂本
+  - luna_pinyin.moe_mini        # 精簡字庫
 ...
 
 一一列舉		1
