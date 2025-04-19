@@ -16,13 +16,12 @@
 # %APPDATA%\Rime  (Windows)
 #
 # 於重新部署後生效
-#
 
 ---
 name: luna_pinyin.hanyu
 version: "2013.11.01"
 sort: by_weight
-use_preset_vocabulary: true
+use_preset_vocabulary: false
 ...
 
 一一行行
