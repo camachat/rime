@@ -22,6 +22,7 @@ name: luna_pinyin.hanyu
 version: "2013.11.01"
 sort: by_weight
 use_preset_vocabulary: false
+min_phrase_weight: 8192
 ...
 
 一一行行

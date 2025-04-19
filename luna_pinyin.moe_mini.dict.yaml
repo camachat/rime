@@ -14,7 +14,6 @@
 #
 #
 #
-#
 
 ---
 name: luna_pinyin.moe_mini
@@ -22,6 +21,7 @@ version: "2025.01.15"
 sort: by_weight
 use_preset_vocabulary: false
 max_phrase_length: 1         # 不生成詞彙
+min_phrase_weight: 1
 ...
 
 一
