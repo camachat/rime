@@ -33,7 +33,7 @@ patch:
   "translator/enable_charset_filter": true
 
   # 指定使用的詞庫
-  "translator/dictionary": luna_pinyin.extended
+  #"translator/dictionary": luna_pinyin.extended
 
   # 拼寫優化（避免西文干擾簡拼）
   "speller/algebra/@before 0": xform/^([b-df-np-z])$/$1_/
